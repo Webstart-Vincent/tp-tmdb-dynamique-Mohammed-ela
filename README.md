@@ -1,9 +1,9 @@
 # Projet Movie Display
 
 ## Table of Contents
-1. [Description](###Description)
-2. [Fonctionnalités](###Fonctionnalités)
-3. [Technologies](###Technologies)
+1. [Description](#Description)
+2. [Fonctionnalités](#Fonctionnalités)
+3. [Technologies](#Technologies)
 4. [Contact](#Contact)
 
 ### Description

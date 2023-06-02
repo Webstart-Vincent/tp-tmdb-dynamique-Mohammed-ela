@@ -1,51 +1,60 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
 
-body{
-    background-color: #1E1E1E;
-}
-.poster{
-    max-height: 600px;
-    max-width: 400px;
-    width: 400px;
-    height: 600px;
-    object-fit:scale-down;
+.big-container
+{
+	background-color: #1E1E1E;
 }
 
-h1{
-    font-family: 'Syne';
-    font-weight: 700;
-    font-size: 50px;
-    text-transform: uppercase;
-    margin-bottom: 50px;
+.poster
+{
+	max-height: 600px;
+	max-width: 400px;
+	width: 400px;
+	height: 600px;
+	object-fit:scale-down;
 }
 
-p{
-    font-family: 'Syne';
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 140%;
-} 
-
-.container {
-    width: 100%; 
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    align-content: space-between;
-    gap: 90px;
-    border-radius: 80px;
-    padding: 0 120px;
-    position: sticky;
-    top: 0;
-    border: 1px solid white;
+h1
+{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 50px;
+	text-transform: uppercase;
+	margin-bottom: 50px;
 }
 
-@media screen  and (max-width: 1063px){
-
-    .information{
-        display: none;
-    }
+p
+{
+	font-family: 'Syne';
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 140%;
 }
 
+.container
+{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-content: space-between;
+	gap: 90px;
+	border-radius: 80px;
+	padding: 0 120px;
+	position: sticky;
+	top: 0;
+	border: 1px solid white;
+}
+
+
+                                                    /* Responsivité  */
+@media screen  and (max-width: 1063px)
+{
+	.information
+	{
+		display: none;
+	}
+}
