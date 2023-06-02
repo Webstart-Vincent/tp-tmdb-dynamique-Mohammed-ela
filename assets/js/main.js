@@ -31,9 +31,6 @@ fetch(json_data)
                 // Ajouter la classe 'affiche' à l'image
                 imageElement.classList.add('poster');
 
-                // On commence par charger l'image puis on va vérifier !
-                imageElement.addEventListener('load', handleImageLoad);
-
                 // Utilisation de Color Thief pour extraire les couleurs de l'image , on instancie l'object avec le mot clé new
                 const colorThief = new ColorThief();
 
