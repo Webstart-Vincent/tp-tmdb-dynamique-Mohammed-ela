@@ -10,7 +10,7 @@ fetch(json_data)
         // Parcours de nos données JSON avec forEach
         data.results.forEach(film => {
             // On exclut les films sans description et sans image
-            if (film.overview !== "" && film.poster_path !== "" && film.original_title !== "") {
+            if (film.overview !== "" && film.poster_path !== "" && film.original_title !== "" && film.poster_path.complete !== 0) {
 
                 // Stocker les données qui nous intéressent dans des variables
                 const description = film.overview;
@@ -35,7 +35,7 @@ fetch(json_data)
                 const colorThief = new ColorThief();
 
                 //vérifions si l'image se charge complètement et a bien une hauteur qui n'est pas null
-                if (imageElement.complete && imageElement.naturalHeight !== 0) {
+                // if (imageElement.complete && imageElement.naturalHeight !== 0) {
                   // fonction qui va ecouté le load , quand l'image se charge !
                   imageElement.addEventListener('load', () => {
 
@@ -55,7 +55,7 @@ fetch(json_data)
                           texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                     });
 
-                }
+                // }
 
                 // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
                 const informationDiv = document.createElement('div');
