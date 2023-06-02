@@ -54,7 +54,7 @@ fetch(json_data)
                     // Description du film
                     texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                 });
-            }
+            
 
 
             // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
@@ -81,7 +81,8 @@ fetch(json_data)
             Container.appendChild(informationDiv);
             // ajouter le tout à notre div parent qui a pour class 'big-container'
             bigcontainer.appendChild(Container);
-
+          }
         });
+        
     })
     .catch(error => console.error(error));
