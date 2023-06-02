@@ -33,8 +33,10 @@ fetch(json_data)
 
           // Utilisation de Color Thief pour extraire les couleurs de l'image
           const colorThief = new ColorThief();
-          //lorsque l'image se charge l'action est effectué !
+          //lorsque l'image se load l'action est effectué ! 
           imageElement.addEventListener('load', () => {
+          //vérifions si l'image est complètement chargée et une hauteur qui n'est pas null
+          if (imageElement.complete && imageElement.naturalHeight !== 0) {
           const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
           const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
 
@@ -47,7 +49,7 @@ fetch(json_data)
           titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`; 
           // Description du film
           texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-          // texteElement.style.color = `rgb(${palette[0][0]}, ${palette[0][1]}, ${palette[0][2]})`; 
+          }
         });
 
         // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
