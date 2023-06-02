@@ -10,7 +10,7 @@ fetch(json_data)
         // Parcours de nos données JSON avec forEach
         data.results.forEach(film => {
             // On exclut les films sans description et sans image
-            if (film.overview !== "" && film.poster_path !== "" && film.original_title !== "" && film.poster_path.complete !== 0) {
+            if (film.overview !== "" && film.poster_path !== "" && film.original_title !== "") {
 
                 // Stocker les données qui nous intéressent dans des variables
                 const description = film.overview;
