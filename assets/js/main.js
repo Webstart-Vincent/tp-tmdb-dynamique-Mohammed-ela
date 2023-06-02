@@ -61,10 +61,7 @@ fetch(json_data)
                           Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
                           // Contour de la carte
                           Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
-                          // Titre du film
-                          titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                          // Description du film
-                          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                          
                     // });
                   
                  
@@ -84,7 +81,13 @@ fetch(json_data)
                 texteElement.classList.add('texte');
                 // texteElement.style.color = '#282823';
                 texteElement.textContent = description;
-
+// Titre du film
+titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+// Description du film
+texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;// Titre du film
+                          titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                          // Description du film
+                          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                 // utilisation de la fonction appendChild pour ajouter le titre H1 et le paragraphe à notre div 'description'
                 informationDiv.appendChild(titleElement);
                 informationDiv.appendChild(texteElement);
