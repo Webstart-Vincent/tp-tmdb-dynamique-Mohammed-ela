@@ -41,9 +41,7 @@ fetch(json_data)
                 }
 
                 function handleImageLoad() {
-                  // Code à exécuter lorsque l'image est chargée avec succès
-                  console.log('L\'image s\'est chargée correctement.');
-                  // Autres actions à effectuer après le chargement de l'image
+                
                 
                 // Utilisation de Color Thief pour extraire les couleurs de l'image , on instancie l'object avec le mot clé new
                 const colorThief = new ColorThief();
@@ -51,7 +49,7 @@ fetch(json_data)
 
                 // if (imageElement.complete && imageElement.naturalHeight !== 0) {
                   // fonction qui va ecouté le load , quand l'image se charge !
-                  imageElement.addEventListener('load', () => {
+                  // imageElement.addEventListener('load', () => {
 
                           const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
                           const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
@@ -67,8 +65,8 @@ fetch(json_data)
                           titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                           // Description du film
                           texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                    });
-                  }
+                    // });
+                  
                  
 
                 // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
@@ -95,6 +93,7 @@ fetch(json_data)
                 Container.appendChild(informationDiv);
                 // ajouter le tout à notre div parent qui a pour class 'big-container'
                 bigcontainer.appendChild(Container);
+              }
             }
         });
     })
