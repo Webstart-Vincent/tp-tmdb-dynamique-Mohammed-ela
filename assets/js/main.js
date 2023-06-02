@@ -33,27 +33,29 @@ fetch(json_data)
 
                 // Utilisation de Color Thief pour extraire les couleurs de l'image , on instancie l'object avec le mot clé new
                 const colorThief = new ColorThief();
-                // fonction qui va ecouté le load , quand l'image se charge !
-                imageElement.addEventListener('load', () => {
-                    //vérifions si l'image se charge complètement et a bien une hauteur qui n'est pas null
-                    if (imageElement.complete && imageElement.naturalHeight !== 0) {
-                        const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
-                        const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
 
-                        // Appliquer les couleurs aux éléments de la carte en mode  :
+                //vérifions si l'image se charge complètement et a bien une hauteur qui n'est pas null
+                if (imageElement.complete && imageElement.naturalHeight !== 0) {
+                  // fonction qui va ecouté le load , quand l'image se charge !
+                  imageElement.addEventListener('load', () => {
 
+                          const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
+                          const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
 
-                        // Fond de la carte
-                        Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-                        // Contour de la carte
-                        Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
-                        // Titre du film
-                        titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                        // Description du film
-                        texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                    }
+                         
+                  // Appliquer les couleurs aux éléments de la carte en mode  :
 
-                });
+                          // Fond de la carte
+                          Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+                          // Contour de la carte
+                          Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
+                          // Titre du film
+                          titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                          // Description du film
+                          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                    });
+
+                }
 
                 // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
                 const informationDiv = document.createElement('div');
