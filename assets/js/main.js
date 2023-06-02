@@ -49,7 +49,7 @@ fetch(json_data)
 
                 // if (imageElement.complete && imageElement.naturalHeight !== 0) {
                   // fonction qui va ecouté le load , quand l'image se charge !
-                  // imageElement.addEventListener('load', () => {
+                  imageElement.addEventListener('load', () => {
 
                           const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
                           const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
@@ -61,9 +61,12 @@ fetch(json_data)
                           Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
                           // Contour de la carte
                           Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
-                          
-                    // });
-                  
+                          // Titre du film
+                          titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                          // Description du film
+                          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                    });
+                  }
                  
 
                 // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
@@ -81,13 +84,7 @@ fetch(json_data)
                 texteElement.classList.add('texte');
                 // texteElement.style.color = '#282823';
                 texteElement.textContent = description;
-// Titre du film
-titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-// Description du film
-texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;// Titre du film
-                          titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                          // Description du film
-                          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+
                 // utilisation de la fonction appendChild pour ajouter le titre H1 et le paragraphe à notre div 'description'
                 informationDiv.appendChild(titleElement);
                 informationDiv.appendChild(texteElement);
@@ -96,7 +93,6 @@ texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1]
                 Container.appendChild(informationDiv);
                 // ajouter le tout à notre div parent qui a pour class 'big-container'
                 bigcontainer.appendChild(Container);
-              }
             }
         });
     })
