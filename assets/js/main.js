@@ -31,10 +31,24 @@ fetch(json_data)
                 // Ajouter la classe 'affiche' à l'image
                 imageElement.classList.add('poster');
 
+                // On commence par charger l'image puis on va vérifier !
+                imageElement.addEventListener('load', handleImageLoad);
+
+                // Vérifions que l'image s'est bien chargée
+                if (imageElement.complete && imageElement.naturalHeight !== 0) {
+                  // Code à exécuter si l'image est déjà chargée
+                  handleImageLoad();
+                }
+
+                function handleImageLoad() {
+                  // Code à exécuter lorsque l'image est chargée avec succès
+                  console.log('L\'image s\'est chargée correctement.');
+                  // Autres actions à effectuer après le chargement de l'image
+                
                 // Utilisation de Color Thief pour extraire les couleurs de l'image , on instancie l'object avec le mot clé new
                 const colorThief = new ColorThief();
 
-                //vérifions si l'image se charge complètement et a bien une hauteur qui n'est pas null
+
                 // if (imageElement.complete && imageElement.naturalHeight !== 0) {
                   // fonction qui va ecouté le load , quand l'image se charge !
                   imageElement.addEventListener('load', () => {
@@ -54,8 +68,8 @@ fetch(json_data)
                           // Description du film
                           texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                     });
-
-                // }
+                  }
+                 
 
                 // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
                 const informationDiv = document.createElement('div');
