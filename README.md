@@ -2,9 +2,11 @@
 
 ## Table of Contents
 1. [Description](#description)
-2. [Technologies](#technologies)
-3. [Collaboration](#collaboration)
+2. [Fonctionnalités](#Fonctionnalités)
+3. [Technologies](#Technologies utilisées)
 4. [Contact](#Contact)
+
+# Description
 
 - Ce projet est un afficheur de films basé sur l'API TMDB (The Movie Database). Il récupère les films à venir depuis l'API et les affiche dans une interface utilisateur conviviale.
 
@@ -24,4 +26,4 @@
 
 # Contact
 
-Si vous avez des questions ou des suggestions, n'hésitez pas à me contacter à [votre adresse e-mail] ou à ouvrir une issue dans ce référentiel.
+- Si vous avez des questions ou des suggestions, n'hésitez pas à me contacter à [votre adresse e-mail] ou à ouvrir une issue dans ce référentiel.
