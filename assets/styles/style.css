@@ -3,7 +3,7 @@
 body{
     background-color: #1E1E1E;
 }
-.affiche{
+.poster{
     max-height: 600px;
     max-width: 400px;
     width: 400px;
@@ -44,7 +44,7 @@ p{
 
 @media screen  and (max-width: 1063px){
 
-    .description{
+    .information{
         display: none;
     }
 }
