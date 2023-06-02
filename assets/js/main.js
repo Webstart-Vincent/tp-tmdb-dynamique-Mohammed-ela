@@ -34,15 +34,6 @@ fetch(json_data)
                 // On commence par charger l'image puis on va vérifier !
                 imageElement.addEventListener('load', handleImageLoad);
 
-                // Vérifions que l'image s'est bien chargée
-                if (imageElement.complete && imageElement.naturalHeight !== 0) {
-                  // Code à exécuter si l'image est déjà chargée
-                  handleImageLoad();
-                }
-
-                function handleImageLoad() {
-                
-                
                 // Utilisation de Color Thief pour extraire les couleurs de l'image , on instancie l'object avec le mot clé new
                 const colorThief = new ColorThief();
 
@@ -93,7 +84,7 @@ fetch(json_data)
                 Container.appendChild(informationDiv);
                 // ajouter le tout à notre div parent qui a pour class 'big-container'
                 bigcontainer.appendChild(Container);
-            }
+            
         });
     })
     .catch(error => console.error(error));
