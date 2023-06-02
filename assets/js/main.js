@@ -36,52 +36,52 @@ fetch(json_data)
 
 
                 // if (imageElement.complete && imageElement.naturalHeight !== 0) {
-                  // fonction qui va ecouté le load , quand l'image se charge !
-                  imageElement.addEventListener('load', () => {
+                // fonction qui va ecouté le load , quand l'image se charge !
+                imageElement.addEventListener('load', () => {
 
-                          const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
-                          const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
+                    const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
+                    const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
 
-                         
-                  // Appliquer les couleurs aux éléments de la carte en mode  :
 
-                          // Fond de la carte
-                          Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-                          // Contour de la carte
-                          Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
-                          // Titre du film
-                          titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                          // Description du film
-                          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
-                    });
-                  }
-                 
+                    // Appliquer les couleurs aux éléments de la carte en mode  :
 
-                // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
-                const informationDiv = document.createElement('div');
-                informationDiv.classList.add('information');
+                    // Fond de la carte
+                    Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+                    // Contour de la carte
+                    Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
+                    // Titre du film
+                    titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                    // Description du film
+                    texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                });
+            }
 
-                // Création du titre H1
-                const titleElement = document.createElement('h1');
-                titleElement.classList.add('title');
-                // titleElement.style.color = '#282823';
-                titleElement.textContent = titre;
 
-                // Création du paragraphe
-                const texteElement = document.createElement('p');
-                texteElement.classList.add('texte');
-                // texteElement.style.color = '#282823';
-                texteElement.textContent = description;
+            // Création d'une div avec la classe 'description' qui regroupera une balise titre H1 et une balise paragraphe (que nous allons créer également)
+            const informationDiv = document.createElement('div');
+            informationDiv.classList.add('information');
 
-                // utilisation de la fonction appendChild pour ajouter le titre H1 et le paragraphe à notre div 'description'
-                informationDiv.appendChild(titleElement);
-                informationDiv.appendChild(texteElement);
-                // ajouter la div 'description' et l'image contenant la classe 'affiche' à notre div enfant 'filmContainer'
-                Container.appendChild(imageElement);
-                Container.appendChild(informationDiv);
-                // ajouter le tout à notre div parent qui a pour class 'big-container'
-                bigcontainer.appendChild(Container);
-            
+            // Création du titre H1
+            const titleElement = document.createElement('h1');
+            titleElement.classList.add('title');
+            // titleElement.style.color = '#282823';
+            titleElement.textContent = titre;
+
+            // Création du paragraphe
+            const texteElement = document.createElement('p');
+            texteElement.classList.add('texte');
+            // texteElement.style.color = '#282823';
+            texteElement.textContent = description;
+
+            // utilisation de la fonction appendChild pour ajouter le titre H1 et le paragraphe à notre div 'description'
+            informationDiv.appendChild(titleElement);
+            informationDiv.appendChild(texteElement);
+            // ajouter la div 'description' et l'image contenant la classe 'affiche' à notre div enfant 'filmContainer'
+            Container.appendChild(imageElement);
+            Container.appendChild(informationDiv);
+            // ajouter le tout à notre div parent qui a pour class 'big-container'
+            bigcontainer.appendChild(Container);
+
         });
     })
     .catch(error => console.error(error));
