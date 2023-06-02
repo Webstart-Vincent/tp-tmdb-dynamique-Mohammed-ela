@@ -46,7 +46,7 @@ fetch(json_data)
           // Titre du film
           titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`; 
           // Description du film
-          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[2][2]})`;
+          texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
           // texteElement.style.color = `rgb(${palette[0][0]}, ${palette[0][1]}, ${palette[0][2]})`; 
         });
 
