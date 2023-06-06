@@ -41,18 +41,31 @@ fetch(json_data)
 
                     const dominantColor = colorThief.getColor(imageElement); // Couleur dominante
                     const palette = colorThief.getPalette(imageElement, 3); // Palette de couleurs (3 couleurs)
-
-
+ 
                     // Appliquer les couleurs aux éléments de la carte en mode  :
 
                     // Fond de la carte
                     Container.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
                     // Contour de la carte
                     Container.style.borderColor = `rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]})`;
+
+
+
+                    var luminosite = (dominantColor[0] * 299 + dominantColor[1] * 587 + dominantColor[2] * 114) / 1000
+                    if (luminosite > 125){
+                        luminosite='0'
+                        titleElement.style.color = `rgb(${luminosite}, ${luminosite}, ${luminosite})`;
+                        texteElement.style.color = `rgb(${luminosite}, ${luminosite}, ${luminosite})`;
+                    }else{
+                        luminosite='256'
+                        titleElement.style.color = `rgb(${luminosite}, ${luminosite}, ${luminosite})`;
+                        texteElement.style.color = `rgb(${luminosite}, ${luminosite}, ${luminosite})`;
+                    }
                     // Titre du film
-                    titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                    // titleElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                     // Description du film
-                    texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                    // texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
+                    // texteElement.style.color = `rgb(${palette[1][2]}, ${palette[1][0]}, ${palette[1][1]})`;
                 });
             
 
